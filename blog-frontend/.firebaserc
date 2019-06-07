@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "timreactblog",
+    "reactblog": "timreactblog"
+  }
+}
