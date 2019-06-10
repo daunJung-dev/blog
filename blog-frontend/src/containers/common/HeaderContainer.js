@@ -11,10 +11,18 @@ class HeaderContainer extends Component {
     const { BaseActions } = this.props;
     BaseActions.showModal('remove');
   }
+  handleLoginClick =() => {
+    const {BaseActions} = this.props;
+    BaseActions.showModal('login');
+  }
+  handleJoinClick =() => {
+    const {BaseActions} = this.props;
+    BaseActions.showModal('join');
+  }
 
 
   render() {
-    const { handleRemove } = this;
+    const { handleRemove, handleLoginClick, handleJoinClick } = this;
     const { match, logged } = this.props;
     
     const { id } = match.params;
@@ -24,6 +32,8 @@ class HeaderContainer extends Component {
         postId={id}
         logged={logged}
         onRemove={handleRemove}
+        onLoginClick={handleLoginClick}
+        onJoinClick={handleJoinClick}
       />
     );
   }

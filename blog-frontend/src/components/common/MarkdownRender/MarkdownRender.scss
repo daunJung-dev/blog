@@ -2,7 +2,7 @@
 
 .markdown-render {
   blockquote {
-    border-left: 4px solid $oc-blue-6;
+    border-left: 4px solid $oc-grape-6;
     padding: 1rem;
     background: $oc-gray-1;
     margin-left: 0;
@@ -22,7 +22,7 @@
       font-family: 'D2 Coding';
       background: $oc-gray-0;
       padding: 0.25rem;
-      color: $oc-blue-6;
+      color: $oc-grape-6;
       border: 1px solid $oc-gray-2;
       border-radius: 2px;
     }
@@ -34,9 +34,9 @@
   }
 
   a {
-    color: $oc-blue-6;
+    color: $oc-grape-6;
     &:hover {
-      color: $oc-blue-5;
+      color: $oc-grape-5;
       text-decoration: underline;
     }
   }

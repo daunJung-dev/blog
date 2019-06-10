@@ -14,9 +14,9 @@
         border-bottom: 1px solid transparent;
       }
       a:hover {
-        color: $oc-blue-6;
+        color: $oc-grape-6;
         // 마우스 호버 시 밑줄(밑줄과 글자 사이 여백, 얇은 밑줄을 위해 border-bottom 사용)
-        border-bottom: 1px solid $oc-blue-6; 
+        border-bottom: 1px solid $oc-grape-6; 
       }
     }
     .date {
@@ -29,10 +29,10 @@
     }
     .tags {
       font-size: 0.85rem;
-      color: $oc-blue-6;
+      color: $oc-grape-6;
       a {
         &:hover {
-          color: $oc-blue-5;
+          color: $oc-grape-5;
           text-decoration: underline;
         }
       }
@@ -42,7 +42,7 @@
     }
     &:hover {
       // 호버 시 배경색 변경
-      background: rgba($oc-blue-6, 0.05);
+      background: rgba($oc-grape-6, 0.05);
     }
   }
   .post-item + .post-item { // 아이템 사이 여백

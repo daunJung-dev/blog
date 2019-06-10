@@ -1,8 +1,8 @@
-const { ADMIN_PASS: adminPass } = process.env;
+const { ADMIN_ID: adminId, ADMIN_PASS: adminPass } = process.env;
 
 exports.login = (ctx) => {
-  const { password } = ctx.request.body;
-  if (adminPass === password) {
+  const { id, password } = ctx.request.body;
+  if (adminId === id && adminPass === password) {
     ctx.body = {
       success: true
     };
