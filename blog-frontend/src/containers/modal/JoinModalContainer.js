@@ -49,12 +49,6 @@ class JoinModalContainer extends Component {
     const { BaseActions } = this.props;
     BaseActions.changePhoneInputJoin(value);
   };
-  handleKeyPress = e => {
-    // 엔터 키가 눌리면 로그인 호출
-    if (e.key === "Enter") {
-      this.handleJoin();
-    }
-  };
   render() {
     const {
       handleCancel,
@@ -65,7 +59,6 @@ class JoinModalContainer extends Component {
       handleChangeAddr,
       handleChangePhone,
       handleJoin,
-      handleKeyPress
     } = this;
     const {
       visible,
@@ -90,7 +83,6 @@ class JoinModalContainer extends Component {
         error={error}
         onCancel={handleCancel}
         onJoin={handleJoin}
-        onKeyPress={handleKeyPress}
         onChangeEmail={handleChangeEmail}
         onChangePassword={handleChangePassword}
         onChangePasswordCheck={handleChangePasswordCheck}

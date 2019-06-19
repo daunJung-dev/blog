@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as baseActions from 'store/modules/base';
 import { inform } from 'lib/shouldCancel';
+import JoinModalContainer from '../modal/JoinModalContainer';
 
 class Base extends Component {
   initialize = () => {
@@ -24,6 +25,7 @@ class Base extends Component {
     return (
       <div>
         <LoginModalContainer/>
+        <JoinModalContainer/>
         { /* 전역적으로 사용되는 컴포넌트들이 있다면
         여기서 렌더링합니다. */}
       </div>
