@@ -5,8 +5,7 @@ const { Schema } = mongoose;
 const Client = new Schema({
   email: String,
   password: String,
-  first_name: String,
-  last_name: String,
+  name: String,
   phone: String,
   addr: String,
   joinDate: {

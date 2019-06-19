@@ -29,7 +29,7 @@ class Post extends Component {
     
     if(loading) return null; // 로딩 중일 때는 아무것도 보여주지 않음
 
-    const { title, body, publishedDate, tags } = post.toJS();
+    const { title, body, publishedDate, tags, comments } = post.toJS();
 
     return (
       <div>
@@ -41,7 +41,7 @@ class Post extends Component {
         }
 
         <PostInfo title={title} publishedDate={publishedDate} tags={tags}/>
-        <PostBody body={body}/>
+        <PostBody body={body} comments={comments}/>
       </div>
     )
   }
@@ -50,6 +50,7 @@ class Post extends Component {
 export default connect(
   (state) => ({
     post: state.post.get('post'),
+    comments:state.post.get('comments'),
     loading: state.pender.pending['post/GET_POST'] // 로딩 상태
   }),
   (dispatch) => ({

@@ -1,59 +1,119 @@
-import React, { Component } from 'react';
-import LoginModal from 'components/modal/LoginModal';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as baseActions from 'store/modules/base';
+import React, { Component } from "react";
+import JoinModal from "components/modal/JoinModal";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import * as baseActions from "store/modules/base";
 
 class JoinModalContainer extends Component {
-  handleLogin = async () => {
+  handleJoin = async () => {
     const { BaseActions, password } = this.props;
     try {
-      // 로그인 시도, 성공 시 모달 닫기
       await BaseActions.login(password);
-      BaseActions.hideModal('join');
+      BaseActions.hideModal("join");
       localStorage.logged = "true";
     } catch (e) {
       console.log(e);
     }
-  }
+  };
   handleCancel = () => {
     const { BaseActions } = this.props;
-    BaseActions.hideModal('join');
-  }
-  handleChange = (e) => {
+    BaseActions.hideModal("join");
+  };
+  handleChangeEmail = e => {
     const { value } = e.target;
     const { BaseActions } = this.props;
-    BaseActions.changePasswordInput(value);
-  }
-  handleKeyPress = (e) => {
+    BaseActions.changeEmailInputJoin(value);
+  };
+  handleChangePassword = e => {
+    const { value } = e.target;
+    const { BaseActions } = this.props;
+    BaseActions.changePasswordInputJoin(value);
+  };
+  handleChangePasswordCheck = e => {
+    const { value } = e.target;
+    const { BaseActions } = this.props;
+    BaseActions.changePasswordCheckInputJoin(value);
+  };
+  handleChangeName = e => {
+    const { value } = e.target;
+    const { BaseActions } = this.props;
+    BaseActions.changeNameInputJoin(value);
+  };
+  handleChangeAddr = e => {
+    const { value } = e.target;
+    const { BaseActions } = this.props;
+    BaseActions.changeAddrInputJoin(value);
+  };
+  handleChangePhone = e => {
+    const { value } = e.target;
+    const { BaseActions } = this.props;
+    BaseActions.changePhoneInputJoin(value);
+  };
+  handleKeyPress = e => {
     // 엔터 키가 눌리면 로그인 호출
-    if(e.key === 'Enter') { 
-      this.handleLogin();
+    if (e.key === "Enter") {
+      this.handleJoin();
     }
-  }
+  };
   render() {
-    const { 
-      handleLogin, handleCancel, handleChange, handleKeyPress
+    const {
+      handleCancel,
+      handleChangeEmail,
+      handleChangePassword,
+      handleChangePasswordCheck,
+      handleChangeName,
+      handleChangeAddr,
+      handleChangePhone,
+      handleJoin,
+      handleKeyPress
     } = this;
-    const { visible, error, password } = this.props;
+    const {
+      visible,
+      password,
+      name,
+      email,
+      addr,
+      phone,
+      passwordCheck,
+      error
+    } = this.props;
 
     return (
-      <LoginModal
-        onLogin={handleLogin} onCancel={handleCancel}
-        onChange={handleChange} onKeyPress={handleKeyPress}
-        visible={visible} error={error} password={password}
+      <JoinModal
+        visible={visible}
+        email={email}
+        password={password}
+        passwordCheck={passwordCheck}
+        name={name}
+        addr={addr}
+        phone={phone}
+        error={error}
+        onCancel={handleCancel}
+        onJoin={handleJoin}
+        onKeyPress={handleKeyPress}
+        onChangeEmail={handleChangeEmail}
+        onChangePassword={handleChangePassword}
+        onChangePasswordCheck={handleChangePasswordCheck}
+        onChangeAddr={handleChangeAddr}
+        onChangeName={handleChangeName}
+        onChangePhone={handleChangePhone}
       />
     );
   }
 }
 
 export default connect(
-  (state) => ({
-    visible: state.base.getIn(['modal', 'login']),
-    password: state.base.getIn(['loginModal', 'password']),
-    error: state.base.getIn(['loginModal', 'error'])
+  state => ({
+    visible: state.base.getIn(["modal", "join"]),
+    email: state.base.getIn(["joinModal", "email"]),
+    password: state.base.getIn(["joinModal", "password"]),
+    passwordCheck: state.base.getIn(["joinModal", "passwordCheck"]),
+    addr: state.base.getIn(["joinModal", "addr"]),
+    name: state.base.getIn(["joinModal", "name"]),
+    phone: state.base.getIn(["joinModal", "phone"]),
+    error: state.base.getIn(["joinModal", "error"])
   }),
- (dispatch) => ({
+  dispatch => ({
     BaseActions: bindActionCreators(baseActions, dispatch)
   })
 )(JoinModalContainer);

@@ -10,3 +10,5 @@ export const removePost = (id) => axios.delete(`/api/posts/${id}`);
 export const login = (id, password) => axios.post('/api/auth/login', { id, password });
 export const checkLogin = () => axios.get('/api/auth/check');
 export const logout = () => axios.post('/api/auth/logout');
+
+export const join = (id, password, email, name, addr, phone) => axios.post('/api/auth/join', { id, password, email, name, addr, phone });

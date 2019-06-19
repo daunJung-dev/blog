@@ -11,6 +11,7 @@ module.exports = {
     "no-unused-vars": 1,
     "comma-dangle": 0,
     "no-console": 0,
-    "eol-last": 0
+    "eol-last": 0,
+    "import/no-unresolved":0,
   }
 };
