@@ -10,7 +10,7 @@ const Header = ({postId, logged, onRemove, onLoginClick, onJoinClick, clientId})
   <header className={cx('header')}>
     <div className={cx('header-content')}>
       <div className={cx('brand')}>
-        <Link to="/">고칠래 만들래</Link>
+        <Link to="/">리액트 블로그</Link>
       </div>
       <div className={cx('menu')}>
         <Link to="/#">환영합니다</Link>
