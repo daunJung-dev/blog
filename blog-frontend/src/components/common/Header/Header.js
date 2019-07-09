@@ -12,12 +12,6 @@ const Header = ({postId, logged, onRemove, onLoginClick, onJoinClick, clientId})
       <div className={cx('brand')}>
         <Link to="/">리액트 블로그</Link>
       </div>
-      <div className={cx('menu')}>
-        <Link to="/#">환영합니다</Link>
-        <Link to="/#">수선하기</Link>
-        <Link to="/#">후기작성</Link>
-      </div>
-
       { !(logged) && <div className={cx('right')}>
         <Button key="login" theme="outline" onClick={onLoginClick}>로그인</Button>
         <Button key="join" theme="outline" onClick={onJoinClick}>회원가입</Button>
