@@ -31,19 +31,6 @@
       font-size: 1.5rem;
       font-weight: 600;
     }
-    .menu {
-      // 메뉴 목록
-      color: white;
-      font-size: 1.3rem;
-      font-weight:600;
-      a {
-        padding-left: 0.8rem;
-        padding-right: 0.8rem;
-        &:hover {
-          color: $oc-gray-3;
-        }
-      }
-    }
     .right {
       // 우측 내용
       margin-left: auto;
