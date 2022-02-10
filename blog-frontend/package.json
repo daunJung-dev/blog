@@ -35,7 +35,7 @@
     "jest": "20.0.4",
     "marked": "^0.7.0",
     "moment": "^2.22.2",
-    "node-sass": "4",
+    "node-sass": "7",
     "object-assign": "4.1.1",
     "open-color": "^1.6.3",
     "postcss-flexbugs-fixes": "3.2.0",
